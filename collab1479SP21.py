@@ -45,6 +45,7 @@ def main():
     jumpTable['18'] = stub                # Syed - call to function goes here
     jumpTable['19'] = stub                # Watts - call to function goes here
     jumpTable['20'] = stub                # Woolard - call to function goes here
+    jumpTable['21'] = myFunction          # My function - caesar cipher 
 
     chrChoice = ""      # To hold a menu choice
 
@@ -104,6 +105,7 @@ def showMenu():
     print("18. Syed")
     print("19. Watts")
     print("20. Woolard")
+    print("21. Caesar")
     print()
 
 # *****************************************************************************************
@@ -113,12 +115,21 @@ def showMenu():
 #  
 # FunctionName:  lastnameFunction(your parameters)
 # *****************************************************************************************
-
 # *****************************************************************************************
 # FUNCTION:         stub (default for menu)
 # DESCRIPTION:      stub function created to print a single message: Not Implemented Yet
 # OUTPUT EXAMPLE:   User enters any jumpTable entry that has not been created yet
 # *****************************************************************************************
+def myFunction():
+    """Caesar cipher with user input"""
+    caesar = input("Enter your secret message ")
+    newText = ""
+    for ch in caesar:
+        ordVal = ord(ch)
+        cipherVal = ordVal + 6
+        newText += chr(cipherVal)
+    print(newText)
+
 def stub():
     print()
     print()
